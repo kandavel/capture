@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0RS-qY-5By">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CaptureIt-->
+        <scene sceneID="vfF-MP-iEZ">
+            <objects>
+                <viewController id="uD7-zb-MCW" customClass="CaptureItViewController" customModule="CaptureIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qd3-Js-3QI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ji8-xg-NjA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FUy-2m-rec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-om-i8h">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-lg-aAs">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="5Ul-TC-qfF"/>
+                                            <constraint firstAttribute="height" constant="100" id="tCd-ZU-CyD"/>
+                                        </constraints>
+                                        <state key="normal" image="camera-button"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="uD7-zb-MCW" eventType="touchUpInside" id="ZEj-Uc-euc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Krq-lg-aAs" secondAttribute="bottom" constant="20" id="5ap-JF-pTK"/>
+                                    <constraint firstItem="Krq-lg-aAs" firstAttribute="top" secondItem="1oj-om-i8h" secondAttribute="top" constant="483" id="fHH-8o-bm5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Krq-lg-aAs" secondAttribute="trailing" constant="138" id="iGk-mM-3mo"/>
+                                    <constraint firstItem="Krq-lg-aAs" firstAttribute="leading" secondItem="1oj-om-i8h" secondAttribute="leading" constant="137" id="zfq-sd-U5C"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1oj-om-i8h" firstAttribute="leading" secondItem="FUy-2m-rec" secondAttribute="leading" id="7z8-1g-nWu"/>
+                            <constraint firstAttribute="trailing" secondItem="1oj-om-i8h" secondAttribute="trailing" id="RMA-Bt-cz9"/>
+                            <constraint firstItem="Ji8-xg-NjA" firstAttribute="top" secondItem="1oj-om-i8h" secondAttribute="bottom" id="RVC-bg-lVJ"/>
+                            <constraint firstItem="1oj-om-i8h" firstAttribute="top" secondItem="qd3-Js-3QI" secondAttribute="bottom" id="n4R-F6-VRe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CaptureIt" id="nXM-cr-AyH"/>
+                    <connections>
+                        <outlet property="cameraView" destination="1oj-om-i8h" id="4K0-gA-uYn"/>
+                        <outlet property="takePhoto" destination="Krq-lg-aAs" id="jDs-m8-uMM"/>
+                        <segue destination="c9S-PI-Xoh" kind="show" identifier="image" id="yjH-id-A9j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePx-wH-Ael" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="-361"/>
+        </scene>
+        <!--captureimage-->
+        <scene sceneID="wjm-GC-7XB">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="captureimage" storyboardName="CaptureImage" referencedIdentifier="captureimage" id="c9S-PI-Xoh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Grv-bX-B5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="175"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5uS-5f-76p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0RS-qY-5By" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ff-Y8-7KL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uD7-zb-MCW" kind="relationship" relationship="rootViewController" id="ZVk-Ir-g1J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDL-JZ-eRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.60000000000002" y="174.96251874062969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera-button" width="256" height="256"/>
+    </resources>
+</document>
